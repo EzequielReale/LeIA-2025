@@ -103,20 +103,20 @@ def simular(entorno, agente, pasos_tiempo, prob_ensuciar):
             puntos_paso = -1
         puntos_totales += puntos_paso
         
-        # print(f"Paso {i}:")
-        # if ensuciados:
-        #     print(f"  MUNDO: Se ensuciaron los cuadrantes {ensuciados}")
-        # print(f"  Estado (inicio paso): {estado_actual}")
-        # print(f"  Percepción: {percepcion} -> Acción: {accion} -> Puntos: {puntos_paso}")
-        # print(f"  Estado (fin paso): {entorno.estado}, Nueva Ubic: {entorno.ubicacion_agente}")
+        print(f"Paso {i}:")
+        if ensuciados:
+            print(f"  MUNDO: Se ensuciaron los cuadrantes {ensuciados}")
+        print(f"  Estado (inicio paso): {estado_actual}")
+        print(f"  Percepción: {percepcion} -> Acción: {accion} -> Puntos: {puntos_paso}")
+        print(f"  Estado (fin paso): {entorno.estado}, Nueva Ubic: {entorno.ubicacion_agente}")
         
     print("\n--- FIN SIMULACIÓN ---")
     return puntos_totales, historial_para_medida
 
 
 if __name__ == "__main__":
-    PASOS_TIEMPO = 30000000
-    NUM_CUADRANTES = 400
+    PASOS_TIEMPO = 30
+    NUM_CUADRANTES = 4
     # Probabilidad de que un cuadrante limpio se ensucie en CADA paso
     PROB_ENSUCIAR = 0.1 
 
@@ -147,3 +147,4 @@ if __name__ == "__main__":
     print(f"Puntuación Máxima Posible: {NUM_CUADRANTES * PASOS_TIEMPO}")
     if PASOS_TIEMPO > 0:
         print(f"Rendimiento (Limpieza promedio): {puntos / (NUM_CUADRANTES * PASOS_TIEMPO):.2%}")
+
